@@ -1,0 +1,83 @@
+//
+//  PrefixHeader.pch
+//  GHDropMenu
+//
+//  Created by GHome on 2017/12/30.
+//  Copyright © 2017年 GHome. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+Extension.h"
+#import "Masonry.h"
+
+#define KIsBlankString(str)  [NSString isBlankString:str]
+#define weakself(self)  __weak __typeof(self) weakSelf = self
+
+#define kScreenRect ([UIScreen mainScreen].bounds)
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kCONTENTHEIGHT (SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT)
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+#define kTabBarHeight 49.0f
+#define kAdaptX(num) num * kScreenWidth / 414
+#define kAdaptY(num) num * kScreenHeight / 736
+
+#define kMargin 15
+#define kSectionHeight 44
+
+#define kSpaceMargin 5
+#define kPadding kAdaptX(35.0)
+#define kLineHeight 0.5
+
+#pragma mark - 公共控件尺寸
+#define kImgViewWidth   130
+#define kImgViewHeight  90
+#define kTagViewHeight 21
+/** 头像 */
+#define kIconWidth 60
+#define kIconHeight 60
+
+#define kDropMenuHeight 50
+
+#pragma mark - 字体适配
+#define SizeScale  (IsIphone6P ? 1.5 : 1)
+#define IS_IPHONE_X (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 812.0)
+
+
+
+
+#define kStatusBarHeight (kScreenHeight == 812.0 ? 44 : 20)
+#define kSafeAreaBottomHeight (kScreenHeight == 812.0 ? 34 : 0)
+#define kNavBarHeight (kScreenHeight == 812.0 ? 44 : 44)
+#define kSafeAreaTopHeight (kScreenHeight == 812.0 ? 88 : 64)
+#define kBottomHeight (kScreenHeight == 812.0 ? 49 : 0)
+
+#define kNavBarHeightAndkStatusBarHeight kNavBarHeight+kStatusBarHeight
+
+#define KAlert(msg) [[[UIAlertView alloc] initWithTitle:@"结果" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show]
+
+
+#define FXMColorWithRGB(r, g, b) ([UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1])
+#define  FXMColorWithRGBA(r, g, b, a) ([UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)])
+/** 主题颜色 */
+#define kFXMThemeColor       FXMColorWithRGB(111, 192, 147)
+/** 灰色 */
+#define kFXMLightgreyColor FXMColorWithRGB(201, 201, 201)
+/** 标题颜色*/
+#define kFXMTitleColor   FXMColorWithRGB(45, 47, 48)
+/** 线颜色*/
+#define kFXMLineColor    FXMColorWithRGB(201, 201, 201)
+/** navBar颜色*/
+#define kFXMNavBarColor  FXMColorWithRGB(247, 247, 247)
+/** 白色 */
+#define kFXMWhiteColor [UIColor whiteColor]
+/** 黑色 */
+#define kFXMBlackColor [UIColor blackColor]
+/** 红色 */
+#define kFXMRedColor FXMColorWithRGB(229, 32, 39)
+/** 随机色 */
+#define kFXMCOLOR_RANDOM         FXMColorWithRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#endif /* PrefixHeader_pch */
